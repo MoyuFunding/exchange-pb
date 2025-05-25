@@ -5,6 +5,7 @@ pub mod mexc {
 
 // Re-export for convenience
 pub use mexc::*;
+pub use prost;
 
 #[cfg(test)]
 mod tests {
