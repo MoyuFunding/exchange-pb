@@ -10,7 +10,7 @@ license     = "MIT OR Apache-2.0"
 readme      = "README.md"
 repository  = "https://github.com/MoyuFunding/exchange-pb"
 keywords    = ["trading", "crypto", "exchange"]
-categories  = ["trading", "crypto", "exchange"]
+categories  = ["finance"]
 homepage    = "https://github.com/MoyuFunding/exchange-pb"  # 或项目官网
 
 [dependencies]
