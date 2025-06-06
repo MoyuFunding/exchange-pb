@@ -3,6 +3,7 @@
 syntax = "proto3";
 
 package mexc;
+option go_package = "github.com/MoyuFunding/exchange-pb/go/pkg/mexc";
 
 import "PublicMiniTickerV3Api.proto";
 

@@ -1,0 +1,107 @@
+name: Release
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to release'
+        required: true
+        type: string
+
+jobs:
+  rust-publish:
+    name: Publish Rust Crate
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Install Rust
+      uses: dtolnay/rust-toolchain@stable
+    
+    - name: Install protoc
+      uses: arduino/setup-protoc@v2
+      with:
+        version: '23.x'
+    
+    - name: Build and test
+      run: cd rust && cargo build && cargo test
+    
+    - name: Publish to crates.io
+      run: cd rust && cargo publish --token ${{ secrets.CARGO_REGISTRY_TOKEN }}
+      if: github.event_name == 'release'
+
+  go-tag:
+    name: Tag Go Module
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Create Go module tag
+      run: |
+        VERSION=${{ github.event.release.tag_name || github.event.inputs.version }}
+        git tag "go/${VERSION}"
+        git push origin "go/${VERSION}"
+      if: github.event_name == 'release' || github.event_name == 'workflow_dispatch'
+
+  nodejs-publish:
+    name: Publish Node.js Package
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        registry-url: 'https://registry.npmjs.org'
+    
+    - name: Install protoc
+      uses: arduino/setup-protoc@v2
+      with:
+        version: '23.x'
+    
+    - name: Install dependencies
+      run: cd nodejs && npm ci
+    
+    - name: Build package
+      run: cd nodejs && npm run build
+    
+    - name: Publish to NPM
+      run: cd nodejs && npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      if: github.event_name == 'release'
+
+  update-version:
+    name: Update Version Numbers
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch'
+    
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Update Cargo.toml
+      run: |
+        VERSION=${{ github.event.inputs.version }}
+        sed -i "s/^version = \".*\"/version = \"$VERSION\"/" rust/Cargo.toml
+    
+    - name: Update package.json
+      run: |
+        VERSION=${{ github.event.inputs.version }}
+        cd nodejs
+        npm version $VERSION --no-git-tag-version
+    
+    - name: Commit version updates
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add .
+        git commit -m "chore: bump version to ${{ github.event.inputs.version }}"
+        git push 

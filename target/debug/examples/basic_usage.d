@@ -1,0 +1,1 @@
+/Users/x1957/workspace/rust/exchange-pb/target/debug/examples/basic_usage: /Users/x1957/workspace/rust/exchange-pb/build.rs /Users/x1957/workspace/rust/exchange-pb/examples/basic_usage.rs /Users/x1957/workspace/rust/exchange-pb/src/lib.rs /Users/x1957/workspace/rust/exchange-pb/target/debug/build/exchange-pb-51ec3c1ac0dc9ee4/out/mexc.rs

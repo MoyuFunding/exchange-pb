@@ -1,0 +1,44 @@
+{
+  "name": "@moyufunding/exchange-pb",
+  "version": "0.1.0",
+  "description": "Protocol Buffer definitions for MEXC exchange data structures",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "npm run generate && npm run compile",
+    "generate": "node scripts/generate.js",
+    "compile": "tsc",
+    "clean": "rm -rf lib/ proto-gen/",
+    "test": "jest",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "protobuf",
+    "mexc",
+    "exchange",
+    "trading",
+    "crypto"
+  ],
+  "author": "fangyuhao@gmail.com",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MoyuFunding/exchange-pb.git",
+    "directory": "nodejs"
+  },
+  "dependencies": {
+    "protobufjs": "^7.2.5"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.0.0",
+    "@types/node": "^20.0.0",
+    "jest": "^29.0.0",
+    "protobufjs-cli": "^1.1.3",
+    "ts-jest": "^29.0.0",
+    "typescript": "^5.0.0"
+  },
+  "files": [
+    "lib/",
+    "README.md"
+  ]
+}

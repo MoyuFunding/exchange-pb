@@ -1,6 +1,14 @@
 # Exchange Protocol Buffers
 
-This Rust library provides Protocol Buffer definitions and generated code for MEXC exchange data structures.
+A multi-language library providing Protocol Buffer definitions and generated code for MEXC exchange data structures.
+
+## Language Support
+
+This library supports multiple programming languages:
+
+- **Rust** - Type-safe, async-ready implementation using `prost`
+- **Go** - High-performance implementation with native protobuf support  
+- **Node.js** - JavaScript/TypeScript support with `protobufjs`
 
 ## Overview
 
@@ -11,13 +19,92 @@ This library contains protobuf definitions for various MEXC exchange APIs includ
 - Batch operations for multiple data items
 - Aggregated data structures
 
+## Directory Structure
+
+```
+.
+├── proto/                    # Shared protobuf definitions
+│   └── mexc/                # MEXC exchange proto files
+├── rust/                    # Rust implementation  
+│   ├── Cargo.toml
+│   ├── build.rs
+│   └── src/
+├── go/                      # Go implementation
+│   ├── go.mod
+│   ├── Makefile
+│   └── pkg/
+└── nodejs/                  # Node.js implementation
+    ├── package.json
+    ├── scripts/
+    └── lib/
+```
+
+## Usage by Language
+
+### Rust
+
+Add this to your `Cargo.toml`:
+
+```toml
+[dependencies]
+exchange-pb = { path = "./rust" }
+```
+
+Example usage:
+```rust
+use exchange_pb::mexc::*;
+
+let book_ticker = PublicBookTickerV3Api {
+    bid_price: "50000.00".to_string(),
+    bid_quantity: "1.5".to_string(),
+    ask_price: "50001.00".to_string(),
+    ask_quantity: "2.0".to_string(),
+};
+```
+
+### Go
+
+```bash
+go get github.com/MoyuFunding/exchange-pb/go
+```
+
+Example usage:
+```go
+import "github.com/MoyuFunding/exchange-pb/go/pkg/mexc"
+
+bookTicker := &mexc.PublicBookTickerV3Api{
+    BidPrice:     "50000.00",
+    BidQuantity:  "1.5", 
+    AskPrice:     "50001.00",
+    AskQuantity:  "2.0",
+}
+```
+
+### Node.js
+
+```bash
+npm install @moyufunding/exchange-pb
+```
+
+Example usage:
+```javascript
+const { mexc } = require('@moyufunding/exchange-pb');
+
+const bookTicker = new mexc.PublicBookTickerV3Api({
+    bidPrice: "50000.00",
+    bidQuantity: "1.5",
+    askPrice: "50001.00", 
+    askQuantity: "2.0"
+});
+```
+
 ## Features
 
-- **Modular Structure**: Generated code is organized by package (e.g., `mexc` module)
-- **Async-ready**: Generated structs work seamlessly with async Rust code
-- **Serde compatible**: All generated types support JSON serialization/deserialization
-- **Type-safe**: Leverages Rust's type system for safe data handling
-- **Performance**: Uses `prost` for efficient protobuf encoding/decoding
+- **Cross-platform**: Consistent API across Rust, Go, and Node.js
+- **Type-safe**: Leverages each language's type system
+- **Performance**: Optimized protobuf encoding/decoding for each platform
+- **Async-ready**: Support for async/await patterns where applicable
+- **JSON compatible**: All types support JSON serialization
 
 ## Usage
 

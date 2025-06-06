@@ -1,0 +1,24 @@
+[package]
+name        = "exchange-pb"
+version     = "0.1.0"               # 遵循 SemVer
+edition     = "2024"                # 建议用最新 edition
+authors     = ["fangyuhao@gmail.com"]
+description = "protobuf for crypto exchanges"
+license     = "MIT OR Apache-2.0"
+
+# 强烈建议
+readme      = "README.md"
+repository  = "https://github.com/MoyuFunding/exchange-pb"
+keywords    = ["trading", "crypto", "exchange"]
+categories  = ["finance"]
+homepage    = "https://github.com/MoyuFunding/exchange-pb"  # 或项目官网
+
+[dependencies]
+prost = "0.12"
+prost-types = "0.12"
+bytes = "1.5"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+[build-dependencies]
+prost-build = "0.12"
