@@ -1,13 +1,14 @@
 {
-  "name": "@moyufunding/exchange-pb",
-  "version": "0.1.0",
+  "name": "@frank1957/exchange-pb",
+  "version": "0.1.1",
   "description": "Protocol Buffer definitions for MEXC exchange data structures",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "build": "npm run generate && npm run compile",
+    "build": "npm run generate && npm run compile && npm run copy-proto",
     "generate": "node scripts/generate.js",
     "compile": "tsc",
+    "copy-proto": "cp src/proto.js lib/ && cp src/proto.d.ts lib/",
     "clean": "rm -rf lib/ proto-gen/",
     "test": "jest",
     "prepublishOnly": "npm run build"
