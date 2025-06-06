@@ -107,6 +107,27 @@ export namespace mexc {
         public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): mexc.PrivateAccountV3Api;
 
         /**
+         * Creates a PrivateAccountV3Api message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns PrivateAccountV3Api
+         */
+        public static fromObject(object: { [k: string]: any }): mexc.PrivateAccountV3Api;
+
+        /**
+         * Creates a plain object from a PrivateAccountV3Api message. Also converts values to other types if specified.
+         * @param message PrivateAccountV3Api
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: mexc.PrivateAccountV3Api, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this PrivateAccountV3Api to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
          * Gets the default type url for PrivateAccountV3Api
          * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
          * @returns The default type url
@@ -240,6 +261,27 @@ export namespace mexc {
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
         public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): mexc.PrivateDealsV3Api;
+
+        /**
+         * Creates a PrivateDealsV3Api message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns PrivateDealsV3Api
+         */
+        public static fromObject(object: { [k: string]: any }): mexc.PrivateDealsV3Api;
+
+        /**
+         * Creates a plain object from a PrivateDealsV3Api message. Also converts values to other types if specified.
+         * @param message PrivateDealsV3Api
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: mexc.PrivateDealsV3Api, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this PrivateDealsV3Api to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
 
         /**
          * Gets the default type url for PrivateDealsV3Api
@@ -461,6 +503,27 @@ export namespace mexc {
         public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): mexc.PrivateOrdersV3Api;
 
         /**
+         * Creates a PrivateOrdersV3Api message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns PrivateOrdersV3Api
+         */
+        public static fromObject(object: { [k: string]: any }): mexc.PrivateOrdersV3Api;
+
+        /**
+         * Creates a plain object from a PrivateOrdersV3Api message. Also converts values to other types if specified.
+         * @param message PrivateOrdersV3Api
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: mexc.PrivateOrdersV3Api, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this PrivateOrdersV3Api to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
          * Gets the default type url for PrivateOrdersV3Api
          * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
          * @returns The default type url
@@ -548,6 +611,27 @@ export namespace mexc {
         public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): mexc.PublicAggreBookTickerV3Api;
 
         /**
+         * Creates a PublicAggreBookTickerV3Api message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns PublicAggreBookTickerV3Api
+         */
+        public static fromObject(object: { [k: string]: any }): mexc.PublicAggreBookTickerV3Api;
+
+        /**
+         * Creates a plain object from a PublicAggreBookTickerV3Api message. Also converts values to other types if specified.
+         * @param message PublicAggreBookTickerV3Api
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: mexc.PublicAggreBookTickerV3Api, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this PublicAggreBookTickerV3Api to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
          * Gets the default type url for PublicAggreBookTickerV3Api
          * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
          * @returns The default type url
@@ -621,6 +705,27 @@ export namespace mexc {
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
         public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): mexc.PublicAggreDealsV3Api;
+
+        /**
+         * Creates a PublicAggreDealsV3Api message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns PublicAggreDealsV3Api
+         */
+        public static fromObject(object: { [k: string]: any }): mexc.PublicAggreDealsV3Api;
+
+        /**
+         * Creates a plain object from a PublicAggreDealsV3Api message. Also converts values to other types if specified.
+         * @param message PublicAggreDealsV3Api
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: mexc.PublicAggreDealsV3Api, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this PublicAggreDealsV3Api to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
 
         /**
          * Gets the default type url for PublicAggreDealsV3Api
@@ -708,6 +813,27 @@ export namespace mexc {
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
         public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): mexc.PublicAggreDealsV3ApiItem;
+
+        /**
+         * Creates a PublicAggreDealsV3ApiItem message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns PublicAggreDealsV3ApiItem
+         */
+        public static fromObject(object: { [k: string]: any }): mexc.PublicAggreDealsV3ApiItem;
+
+        /**
+         * Creates a plain object from a PublicAggreDealsV3ApiItem message. Also converts values to other types if specified.
+         * @param message PublicAggreDealsV3ApiItem
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: mexc.PublicAggreDealsV3ApiItem, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this PublicAggreDealsV3ApiItem to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
 
         /**
          * Gets the default type url for PublicAggreDealsV3ApiItem
@@ -803,6 +929,27 @@ export namespace mexc {
         public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): mexc.PublicAggreDepthsV3Api;
 
         /**
+         * Creates a PublicAggreDepthsV3Api message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns PublicAggreDepthsV3Api
+         */
+        public static fromObject(object: { [k: string]: any }): mexc.PublicAggreDepthsV3Api;
+
+        /**
+         * Creates a plain object from a PublicAggreDepthsV3Api message. Also converts values to other types if specified.
+         * @param message PublicAggreDepthsV3Api
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: mexc.PublicAggreDepthsV3Api, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this PublicAggreDepthsV3Api to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
          * Gets the default type url for PublicAggreDepthsV3Api
          * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
          * @returns The default type url
@@ -878,6 +1025,27 @@ export namespace mexc {
         public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): mexc.PublicAggreDepthV3ApiItem;
 
         /**
+         * Creates a PublicAggreDepthV3ApiItem message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns PublicAggreDepthV3ApiItem
+         */
+        public static fromObject(object: { [k: string]: any }): mexc.PublicAggreDepthV3ApiItem;
+
+        /**
+         * Creates a plain object from a PublicAggreDepthV3ApiItem message. Also converts values to other types if specified.
+         * @param message PublicAggreDepthV3ApiItem
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: mexc.PublicAggreDepthV3ApiItem, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this PublicAggreDepthV3ApiItem to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
          * Gets the default type url for PublicAggreDepthV3ApiItem
          * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
          * @returns The default type url
@@ -945,6 +1113,27 @@ export namespace mexc {
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
         public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): mexc.PublicBookTickerBatchV3Api;
+
+        /**
+         * Creates a PublicBookTickerBatchV3Api message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns PublicBookTickerBatchV3Api
+         */
+        public static fromObject(object: { [k: string]: any }): mexc.PublicBookTickerBatchV3Api;
+
+        /**
+         * Creates a plain object from a PublicBookTickerBatchV3Api message. Also converts values to other types if specified.
+         * @param message PublicBookTickerBatchV3Api
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: mexc.PublicBookTickerBatchV3Api, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this PublicBookTickerBatchV3Api to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
 
         /**
          * Gets the default type url for PublicBookTickerBatchV3Api
@@ -1034,6 +1223,27 @@ export namespace mexc {
         public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): mexc.PublicBookTickerV3Api;
 
         /**
+         * Creates a PublicBookTickerV3Api message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns PublicBookTickerV3Api
+         */
+        public static fromObject(object: { [k: string]: any }): mexc.PublicBookTickerV3Api;
+
+        /**
+         * Creates a plain object from a PublicBookTickerV3Api message. Also converts values to other types if specified.
+         * @param message PublicBookTickerV3Api
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: mexc.PublicBookTickerV3Api, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this PublicBookTickerV3Api to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
          * Gets the default type url for PublicBookTickerV3Api
          * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
          * @returns The default type url
@@ -1107,6 +1317,27 @@ export namespace mexc {
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
         public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): mexc.PublicDealsV3Api;
+
+        /**
+         * Creates a PublicDealsV3Api message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns PublicDealsV3Api
+         */
+        public static fromObject(object: { [k: string]: any }): mexc.PublicDealsV3Api;
+
+        /**
+         * Creates a plain object from a PublicDealsV3Api message. Also converts values to other types if specified.
+         * @param message PublicDealsV3Api
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: mexc.PublicDealsV3Api, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this PublicDealsV3Api to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
 
         /**
          * Gets the default type url for PublicDealsV3Api
@@ -1196,6 +1427,27 @@ export namespace mexc {
         public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): mexc.PublicDealsV3ApiItem;
 
         /**
+         * Creates a PublicDealsV3ApiItem message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns PublicDealsV3ApiItem
+         */
+        public static fromObject(object: { [k: string]: any }): mexc.PublicDealsV3ApiItem;
+
+        /**
+         * Creates a plain object from a PublicDealsV3ApiItem message. Also converts values to other types if specified.
+         * @param message PublicDealsV3ApiItem
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: mexc.PublicDealsV3ApiItem, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this PublicDealsV3ApiItem to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
          * Gets the default type url for PublicDealsV3ApiItem
          * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
          * @returns The default type url
@@ -1269,6 +1521,27 @@ export namespace mexc {
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
         public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): mexc.PublicIncreaseDepthsBatchV3Api;
+
+        /**
+         * Creates a PublicIncreaseDepthsBatchV3Api message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns PublicIncreaseDepthsBatchV3Api
+         */
+        public static fromObject(object: { [k: string]: any }): mexc.PublicIncreaseDepthsBatchV3Api;
+
+        /**
+         * Creates a plain object from a PublicIncreaseDepthsBatchV3Api message. Also converts values to other types if specified.
+         * @param message PublicIncreaseDepthsBatchV3Api
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: mexc.PublicIncreaseDepthsBatchV3Api, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this PublicIncreaseDepthsBatchV3Api to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
 
         /**
          * Gets the default type url for PublicIncreaseDepthsBatchV3Api
@@ -1358,6 +1631,27 @@ export namespace mexc {
         public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): mexc.PublicIncreaseDepthsV3Api;
 
         /**
+         * Creates a PublicIncreaseDepthsV3Api message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns PublicIncreaseDepthsV3Api
+         */
+        public static fromObject(object: { [k: string]: any }): mexc.PublicIncreaseDepthsV3Api;
+
+        /**
+         * Creates a plain object from a PublicIncreaseDepthsV3Api message. Also converts values to other types if specified.
+         * @param message PublicIncreaseDepthsV3Api
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: mexc.PublicIncreaseDepthsV3Api, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this PublicIncreaseDepthsV3Api to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
          * Gets the default type url for PublicIncreaseDepthsV3Api
          * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
          * @returns The default type url
@@ -1431,6 +1725,27 @@ export namespace mexc {
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
         public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): mexc.PublicIncreaseDepthV3ApiItem;
+
+        /**
+         * Creates a PublicIncreaseDepthV3ApiItem message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns PublicIncreaseDepthV3ApiItem
+         */
+        public static fromObject(object: { [k: string]: any }): mexc.PublicIncreaseDepthV3ApiItem;
+
+        /**
+         * Creates a plain object from a PublicIncreaseDepthV3ApiItem message. Also converts values to other types if specified.
+         * @param message PublicIncreaseDepthV3ApiItem
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: mexc.PublicIncreaseDepthV3ApiItem, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this PublicIncreaseDepthV3ApiItem to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
 
         /**
          * Gets the default type url for PublicIncreaseDepthV3ApiItem
@@ -1520,6 +1835,27 @@ export namespace mexc {
         public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): mexc.PublicLimitDepthsV3Api;
 
         /**
+         * Creates a PublicLimitDepthsV3Api message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns PublicLimitDepthsV3Api
+         */
+        public static fromObject(object: { [k: string]: any }): mexc.PublicLimitDepthsV3Api;
+
+        /**
+         * Creates a plain object from a PublicLimitDepthsV3Api message. Also converts values to other types if specified.
+         * @param message PublicLimitDepthsV3Api
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: mexc.PublicLimitDepthsV3Api, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this PublicLimitDepthsV3Api to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
          * Gets the default type url for PublicLimitDepthsV3Api
          * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
          * @returns The default type url
@@ -1593,6 +1929,27 @@ export namespace mexc {
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
         public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): mexc.PublicLimitDepthV3ApiItem;
+
+        /**
+         * Creates a PublicLimitDepthV3ApiItem message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns PublicLimitDepthV3ApiItem
+         */
+        public static fromObject(object: { [k: string]: any }): mexc.PublicLimitDepthV3ApiItem;
+
+        /**
+         * Creates a plain object from a PublicLimitDepthV3ApiItem message. Also converts values to other types if specified.
+         * @param message PublicLimitDepthV3ApiItem
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: mexc.PublicLimitDepthV3ApiItem, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this PublicLimitDepthV3ApiItem to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
 
         /**
          * Gets the default type url for PublicLimitDepthV3ApiItem
@@ -1730,6 +2087,27 @@ export namespace mexc {
         public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): mexc.PublicMiniTickerV3Api;
 
         /**
+         * Creates a PublicMiniTickerV3Api message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns PublicMiniTickerV3Api
+         */
+        public static fromObject(object: { [k: string]: any }): mexc.PublicMiniTickerV3Api;
+
+        /**
+         * Creates a plain object from a PublicMiniTickerV3Api message. Also converts values to other types if specified.
+         * @param message PublicMiniTickerV3Api
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: mexc.PublicMiniTickerV3Api, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this PublicMiniTickerV3Api to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
          * Gets the default type url for PublicMiniTickerV3Api
          * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
          * @returns The default type url
@@ -1797,6 +2175,27 @@ export namespace mexc {
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
         public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): mexc.PublicMiniTickersV3Api;
+
+        /**
+         * Creates a PublicMiniTickersV3Api message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns PublicMiniTickersV3Api
+         */
+        public static fromObject(object: { [k: string]: any }): mexc.PublicMiniTickersV3Api;
+
+        /**
+         * Creates a plain object from a PublicMiniTickersV3Api message. Also converts values to other types if specified.
+         * @param message PublicMiniTickersV3Api
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: mexc.PublicMiniTickersV3Api, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this PublicMiniTickersV3Api to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
 
         /**
          * Gets the default type url for PublicMiniTickersV3Api
@@ -1914,6 +2313,27 @@ export namespace mexc {
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
         public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): mexc.PublicSpotKlineV3Api;
+
+        /**
+         * Creates a PublicSpotKlineV3Api message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns PublicSpotKlineV3Api
+         */
+        public static fromObject(object: { [k: string]: any }): mexc.PublicSpotKlineV3Api;
+
+        /**
+         * Creates a plain object from a PublicSpotKlineV3Api message. Also converts values to other types if specified.
+         * @param message PublicSpotKlineV3Api
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: mexc.PublicSpotKlineV3Api, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this PublicSpotKlineV3Api to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
 
         /**
          * Gets the default type url for PublicSpotKlineV3Api
@@ -2100,6 +2520,27 @@ export namespace mexc {
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
         public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): mexc.PushDataV3ApiWrapper;
+
+        /**
+         * Creates a PushDataV3ApiWrapper message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns PushDataV3ApiWrapper
+         */
+        public static fromObject(object: { [k: string]: any }): mexc.PushDataV3ApiWrapper;
+
+        /**
+         * Creates a plain object from a PushDataV3ApiWrapper message. Also converts values to other types if specified.
+         * @param message PushDataV3ApiWrapper
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: mexc.PushDataV3ApiWrapper, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this PushDataV3ApiWrapper to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
 
         /**
          * Gets the default type url for PushDataV3ApiWrapper

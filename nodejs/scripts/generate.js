@@ -35,7 +35,6 @@ function generateProtobufCode() {
         '-o', path.join(OUTPUT_DIR, 'proto.js'),
         '--force-number',
         '--no-verify',
-        '--no-convert',
         '-p', PROTO_DIR,
         ...protoFiles
     ].join(' ');

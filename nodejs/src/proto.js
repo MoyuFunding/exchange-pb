@@ -246,6 +246,104 @@ $root.mexc = (function() {
         };
 
         /**
+         * Creates a PrivateAccountV3Api message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof mexc.PrivateAccountV3Api
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {mexc.PrivateAccountV3Api} PrivateAccountV3Api
+         */
+        PrivateAccountV3Api.fromObject = function fromObject(object) {
+            if (object instanceof $root.mexc.PrivateAccountV3Api)
+                return object;
+            var message = new $root.mexc.PrivateAccountV3Api();
+            if (object.vcoinName != null)
+                message.vcoinName = String(object.vcoinName);
+            if (object.coinId != null)
+                message.coinId = String(object.coinId);
+            if (object.balanceAmount != null)
+                message.balanceAmount = String(object.balanceAmount);
+            if (object.balanceAmountChange != null)
+                message.balanceAmountChange = String(object.balanceAmountChange);
+            if (object.frozenAmount != null)
+                message.frozenAmount = String(object.frozenAmount);
+            if (object.frozenAmountChange != null)
+                message.frozenAmountChange = String(object.frozenAmountChange);
+            if (object.type != null)
+                message.type = String(object.type);
+            if (object.time != null)
+                if ($util.Long)
+                    (message.time = $util.Long.fromValue(object.time)).unsigned = false;
+                else if (typeof object.time === "string")
+                    message.time = parseInt(object.time, 10);
+                else if (typeof object.time === "number")
+                    message.time = object.time;
+                else if (typeof object.time === "object")
+                    message.time = new $util.LongBits(object.time.low >>> 0, object.time.high >>> 0).toNumber();
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a PrivateAccountV3Api message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof mexc.PrivateAccountV3Api
+         * @static
+         * @param {mexc.PrivateAccountV3Api} message PrivateAccountV3Api
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        PrivateAccountV3Api.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.vcoinName = "";
+                object.coinId = "";
+                object.balanceAmount = "";
+                object.balanceAmountChange = "";
+                object.frozenAmount = "";
+                object.frozenAmountChange = "";
+                object.type = "";
+                if ($util.Long) {
+                    var long = new $util.Long(0, 0, false);
+                    object.time = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                } else
+                    object.time = options.longs === String ? "0" : 0;
+            }
+            if (message.vcoinName != null && message.hasOwnProperty("vcoinName"))
+                object.vcoinName = message.vcoinName;
+            if (message.coinId != null && message.hasOwnProperty("coinId"))
+                object.coinId = message.coinId;
+            if (message.balanceAmount != null && message.hasOwnProperty("balanceAmount"))
+                object.balanceAmount = message.balanceAmount;
+            if (message.balanceAmountChange != null && message.hasOwnProperty("balanceAmountChange"))
+                object.balanceAmountChange = message.balanceAmountChange;
+            if (message.frozenAmount != null && message.hasOwnProperty("frozenAmount"))
+                object.frozenAmount = message.frozenAmount;
+            if (message.frozenAmountChange != null && message.hasOwnProperty("frozenAmountChange"))
+                object.frozenAmountChange = message.frozenAmountChange;
+            if (message.type != null && message.hasOwnProperty("type"))
+                object.type = message.type;
+            if (message.time != null && message.hasOwnProperty("time"))
+                if (typeof message.time === "number")
+                    object.time = options.longs === String ? String(message.time) : message.time;
+                else
+                    object.time = options.longs === String ? $util.Long.prototype.toString.call(message.time) : options.longs === Number ? new $util.LongBits(message.time.low >>> 0, message.time.high >>> 0).toNumber() : message.time;
+            return object;
+        };
+
+        /**
+         * Converts this PrivateAccountV3Api to JSON.
+         * @function toJSON
+         * @memberof mexc.PrivateAccountV3Api
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        PrivateAccountV3Api.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
          * Gets the default type url for PrivateAccountV3Api
          * @function getTypeUrl
          * @memberof mexc.PrivateAccountV3Api
@@ -548,6 +646,124 @@ $root.mexc = (function() {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Creates a PrivateDealsV3Api message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof mexc.PrivateDealsV3Api
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {mexc.PrivateDealsV3Api} PrivateDealsV3Api
+         */
+        PrivateDealsV3Api.fromObject = function fromObject(object) {
+            if (object instanceof $root.mexc.PrivateDealsV3Api)
+                return object;
+            var message = new $root.mexc.PrivateDealsV3Api();
+            if (object.price != null)
+                message.price = String(object.price);
+            if (object.quantity != null)
+                message.quantity = String(object.quantity);
+            if (object.amount != null)
+                message.amount = String(object.amount);
+            if (object.tradeType != null)
+                message.tradeType = object.tradeType | 0;
+            if (object.isMaker != null)
+                message.isMaker = Boolean(object.isMaker);
+            if (object.isSelfTrade != null)
+                message.isSelfTrade = Boolean(object.isSelfTrade);
+            if (object.tradeId != null)
+                message.tradeId = String(object.tradeId);
+            if (object.clientOrderId != null)
+                message.clientOrderId = String(object.clientOrderId);
+            if (object.orderId != null)
+                message.orderId = String(object.orderId);
+            if (object.feeAmount != null)
+                message.feeAmount = String(object.feeAmount);
+            if (object.feeCurrency != null)
+                message.feeCurrency = String(object.feeCurrency);
+            if (object.time != null)
+                if ($util.Long)
+                    (message.time = $util.Long.fromValue(object.time)).unsigned = false;
+                else if (typeof object.time === "string")
+                    message.time = parseInt(object.time, 10);
+                else if (typeof object.time === "number")
+                    message.time = object.time;
+                else if (typeof object.time === "object")
+                    message.time = new $util.LongBits(object.time.low >>> 0, object.time.high >>> 0).toNumber();
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a PrivateDealsV3Api message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof mexc.PrivateDealsV3Api
+         * @static
+         * @param {mexc.PrivateDealsV3Api} message PrivateDealsV3Api
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        PrivateDealsV3Api.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.price = "";
+                object.quantity = "";
+                object.amount = "";
+                object.tradeType = 0;
+                object.isMaker = false;
+                object.isSelfTrade = false;
+                object.tradeId = "";
+                object.clientOrderId = "";
+                object.orderId = "";
+                object.feeAmount = "";
+                object.feeCurrency = "";
+                if ($util.Long) {
+                    var long = new $util.Long(0, 0, false);
+                    object.time = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                } else
+                    object.time = options.longs === String ? "0" : 0;
+            }
+            if (message.price != null && message.hasOwnProperty("price"))
+                object.price = message.price;
+            if (message.quantity != null && message.hasOwnProperty("quantity"))
+                object.quantity = message.quantity;
+            if (message.amount != null && message.hasOwnProperty("amount"))
+                object.amount = message.amount;
+            if (message.tradeType != null && message.hasOwnProperty("tradeType"))
+                object.tradeType = message.tradeType;
+            if (message.isMaker != null && message.hasOwnProperty("isMaker"))
+                object.isMaker = message.isMaker;
+            if (message.isSelfTrade != null && message.hasOwnProperty("isSelfTrade"))
+                object.isSelfTrade = message.isSelfTrade;
+            if (message.tradeId != null && message.hasOwnProperty("tradeId"))
+                object.tradeId = message.tradeId;
+            if (message.clientOrderId != null && message.hasOwnProperty("clientOrderId"))
+                object.clientOrderId = message.clientOrderId;
+            if (message.orderId != null && message.hasOwnProperty("orderId"))
+                object.orderId = message.orderId;
+            if (message.feeAmount != null && message.hasOwnProperty("feeAmount"))
+                object.feeAmount = message.feeAmount;
+            if (message.feeCurrency != null && message.hasOwnProperty("feeCurrency"))
+                object.feeCurrency = message.feeCurrency;
+            if (message.time != null && message.hasOwnProperty("time"))
+                if (typeof message.time === "number")
+                    object.time = options.longs === String ? String(message.time) : message.time;
+                else
+                    object.time = options.longs === String ? $util.Long.prototype.toString.call(message.time) : options.longs === Number ? new $util.LongBits(message.time.low >>> 0, message.time.high >>> 0).toNumber() : message.time;
+            return object;
+        };
+
+        /**
+         * Converts this PrivateDealsV3Api to JSON.
+         * @function toJSON
+         * @memberof mexc.PrivateDealsV3Api
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        PrivateDealsV3Api.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         /**
@@ -1066,6 +1282,194 @@ $root.mexc = (function() {
         };
 
         /**
+         * Creates a PrivateOrdersV3Api message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof mexc.PrivateOrdersV3Api
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {mexc.PrivateOrdersV3Api} PrivateOrdersV3Api
+         */
+        PrivateOrdersV3Api.fromObject = function fromObject(object) {
+            if (object instanceof $root.mexc.PrivateOrdersV3Api)
+                return object;
+            var message = new $root.mexc.PrivateOrdersV3Api();
+            if (object.id != null)
+                message.id = String(object.id);
+            if (object.clientId != null)
+                message.clientId = String(object.clientId);
+            if (object.price != null)
+                message.price = String(object.price);
+            if (object.quantity != null)
+                message.quantity = String(object.quantity);
+            if (object.amount != null)
+                message.amount = String(object.amount);
+            if (object.avgPrice != null)
+                message.avgPrice = String(object.avgPrice);
+            if (object.orderType != null)
+                message.orderType = object.orderType | 0;
+            if (object.tradeType != null)
+                message.tradeType = object.tradeType | 0;
+            if (object.isMaker != null)
+                message.isMaker = Boolean(object.isMaker);
+            if (object.remainAmount != null)
+                message.remainAmount = String(object.remainAmount);
+            if (object.remainQuantity != null)
+                message.remainQuantity = String(object.remainQuantity);
+            if (object.lastDealQuantity != null)
+                message.lastDealQuantity = String(object.lastDealQuantity);
+            if (object.cumulativeQuantity != null)
+                message.cumulativeQuantity = String(object.cumulativeQuantity);
+            if (object.cumulativeAmount != null)
+                message.cumulativeAmount = String(object.cumulativeAmount);
+            if (object.status != null)
+                message.status = object.status | 0;
+            if (object.createTime != null)
+                if ($util.Long)
+                    (message.createTime = $util.Long.fromValue(object.createTime)).unsigned = false;
+                else if (typeof object.createTime === "string")
+                    message.createTime = parseInt(object.createTime, 10);
+                else if (typeof object.createTime === "number")
+                    message.createTime = object.createTime;
+                else if (typeof object.createTime === "object")
+                    message.createTime = new $util.LongBits(object.createTime.low >>> 0, object.createTime.high >>> 0).toNumber();
+            if (object.market != null)
+                message.market = String(object.market);
+            if (object.triggerType != null)
+                message.triggerType = object.triggerType | 0;
+            if (object.triggerPrice != null)
+                message.triggerPrice = String(object.triggerPrice);
+            if (object.state != null)
+                message.state = object.state | 0;
+            if (object.ocoId != null)
+                message.ocoId = String(object.ocoId);
+            if (object.routeFactor != null)
+                message.routeFactor = String(object.routeFactor);
+            if (object.symbolId != null)
+                message.symbolId = String(object.symbolId);
+            if (object.marketId != null)
+                message.marketId = String(object.marketId);
+            if (object.marketCurrencyId != null)
+                message.marketCurrencyId = String(object.marketCurrencyId);
+            if (object.currencyId != null)
+                message.currencyId = String(object.currencyId);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a PrivateOrdersV3Api message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof mexc.PrivateOrdersV3Api
+         * @static
+         * @param {mexc.PrivateOrdersV3Api} message PrivateOrdersV3Api
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        PrivateOrdersV3Api.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.id = "";
+                object.clientId = "";
+                object.price = "";
+                object.quantity = "";
+                object.amount = "";
+                object.avgPrice = "";
+                object.orderType = 0;
+                object.tradeType = 0;
+                object.isMaker = false;
+                object.remainAmount = "";
+                object.remainQuantity = "";
+                object.lastDealQuantity = "";
+                object.cumulativeQuantity = "";
+                object.cumulativeAmount = "";
+                object.status = 0;
+                if ($util.Long) {
+                    var long = new $util.Long(0, 0, false);
+                    object.createTime = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                } else
+                    object.createTime = options.longs === String ? "0" : 0;
+                object.market = "";
+                object.triggerType = 0;
+                object.triggerPrice = "";
+                object.state = 0;
+                object.ocoId = "";
+                object.routeFactor = "";
+                object.symbolId = "";
+                object.marketId = "";
+                object.marketCurrencyId = "";
+                object.currencyId = "";
+            }
+            if (message.id != null && message.hasOwnProperty("id"))
+                object.id = message.id;
+            if (message.clientId != null && message.hasOwnProperty("clientId"))
+                object.clientId = message.clientId;
+            if (message.price != null && message.hasOwnProperty("price"))
+                object.price = message.price;
+            if (message.quantity != null && message.hasOwnProperty("quantity"))
+                object.quantity = message.quantity;
+            if (message.amount != null && message.hasOwnProperty("amount"))
+                object.amount = message.amount;
+            if (message.avgPrice != null && message.hasOwnProperty("avgPrice"))
+                object.avgPrice = message.avgPrice;
+            if (message.orderType != null && message.hasOwnProperty("orderType"))
+                object.orderType = message.orderType;
+            if (message.tradeType != null && message.hasOwnProperty("tradeType"))
+                object.tradeType = message.tradeType;
+            if (message.isMaker != null && message.hasOwnProperty("isMaker"))
+                object.isMaker = message.isMaker;
+            if (message.remainAmount != null && message.hasOwnProperty("remainAmount"))
+                object.remainAmount = message.remainAmount;
+            if (message.remainQuantity != null && message.hasOwnProperty("remainQuantity"))
+                object.remainQuantity = message.remainQuantity;
+            if (message.lastDealQuantity != null && message.hasOwnProperty("lastDealQuantity"))
+                object.lastDealQuantity = message.lastDealQuantity;
+            if (message.cumulativeQuantity != null && message.hasOwnProperty("cumulativeQuantity"))
+                object.cumulativeQuantity = message.cumulativeQuantity;
+            if (message.cumulativeAmount != null && message.hasOwnProperty("cumulativeAmount"))
+                object.cumulativeAmount = message.cumulativeAmount;
+            if (message.status != null && message.hasOwnProperty("status"))
+                object.status = message.status;
+            if (message.createTime != null && message.hasOwnProperty("createTime"))
+                if (typeof message.createTime === "number")
+                    object.createTime = options.longs === String ? String(message.createTime) : message.createTime;
+                else
+                    object.createTime = options.longs === String ? $util.Long.prototype.toString.call(message.createTime) : options.longs === Number ? new $util.LongBits(message.createTime.low >>> 0, message.createTime.high >>> 0).toNumber() : message.createTime;
+            if (message.market != null && message.hasOwnProperty("market"))
+                object.market = message.market;
+            if (message.triggerType != null && message.hasOwnProperty("triggerType"))
+                object.triggerType = message.triggerType;
+            if (message.triggerPrice != null && message.hasOwnProperty("triggerPrice"))
+                object.triggerPrice = message.triggerPrice;
+            if (message.state != null && message.hasOwnProperty("state"))
+                object.state = message.state;
+            if (message.ocoId != null && message.hasOwnProperty("ocoId"))
+                object.ocoId = message.ocoId;
+            if (message.routeFactor != null && message.hasOwnProperty("routeFactor"))
+                object.routeFactor = message.routeFactor;
+            if (message.symbolId != null && message.hasOwnProperty("symbolId"))
+                object.symbolId = message.symbolId;
+            if (message.marketId != null && message.hasOwnProperty("marketId"))
+                object.marketId = message.marketId;
+            if (message.marketCurrencyId != null && message.hasOwnProperty("marketCurrencyId"))
+                object.marketCurrencyId = message.marketCurrencyId;
+            if (message.currencyId != null && message.hasOwnProperty("currencyId"))
+                object.currencyId = message.currencyId;
+            return object;
+        };
+
+        /**
+         * Converts this PrivateOrdersV3Api to JSON.
+         * @function toJSON
+         * @memberof mexc.PrivateOrdersV3Api
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        PrivateOrdersV3Api.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
          * Gets the default type url for PrivateOrdersV3Api
          * @function getTypeUrl
          * @memberof mexc.PrivateOrdersV3Api
@@ -1251,6 +1655,70 @@ $root.mexc = (function() {
         };
 
         /**
+         * Creates a PublicAggreBookTickerV3Api message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof mexc.PublicAggreBookTickerV3Api
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {mexc.PublicAggreBookTickerV3Api} PublicAggreBookTickerV3Api
+         */
+        PublicAggreBookTickerV3Api.fromObject = function fromObject(object) {
+            if (object instanceof $root.mexc.PublicAggreBookTickerV3Api)
+                return object;
+            var message = new $root.mexc.PublicAggreBookTickerV3Api();
+            if (object.bidPrice != null)
+                message.bidPrice = String(object.bidPrice);
+            if (object.bidQuantity != null)
+                message.bidQuantity = String(object.bidQuantity);
+            if (object.askPrice != null)
+                message.askPrice = String(object.askPrice);
+            if (object.askQuantity != null)
+                message.askQuantity = String(object.askQuantity);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a PublicAggreBookTickerV3Api message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof mexc.PublicAggreBookTickerV3Api
+         * @static
+         * @param {mexc.PublicAggreBookTickerV3Api} message PublicAggreBookTickerV3Api
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        PublicAggreBookTickerV3Api.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.bidPrice = "";
+                object.bidQuantity = "";
+                object.askPrice = "";
+                object.askQuantity = "";
+            }
+            if (message.bidPrice != null && message.hasOwnProperty("bidPrice"))
+                object.bidPrice = message.bidPrice;
+            if (message.bidQuantity != null && message.hasOwnProperty("bidQuantity"))
+                object.bidQuantity = message.bidQuantity;
+            if (message.askPrice != null && message.hasOwnProperty("askPrice"))
+                object.askPrice = message.askPrice;
+            if (message.askQuantity != null && message.hasOwnProperty("askQuantity"))
+                object.askQuantity = message.askQuantity;
+            return object;
+        };
+
+        /**
+         * Converts this PublicAggreBookTickerV3Api to JSON.
+         * @function toJSON
+         * @memberof mexc.PublicAggreBookTickerV3Api
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        PublicAggreBookTickerV3Api.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
          * Gets the default type url for PublicAggreBookTickerV3Api
          * @function getTypeUrl
          * @memberof mexc.PublicAggreBookTickerV3Api
@@ -1407,6 +1875,71 @@ $root.mexc = (function() {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Creates a PublicAggreDealsV3Api message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof mexc.PublicAggreDealsV3Api
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {mexc.PublicAggreDealsV3Api} PublicAggreDealsV3Api
+         */
+        PublicAggreDealsV3Api.fromObject = function fromObject(object) {
+            if (object instanceof $root.mexc.PublicAggreDealsV3Api)
+                return object;
+            var message = new $root.mexc.PublicAggreDealsV3Api();
+            if (object.deals) {
+                if (!Array.isArray(object.deals))
+                    throw TypeError(".mexc.PublicAggreDealsV3Api.deals: array expected");
+                message.deals = [];
+                for (var i = 0; i < object.deals.length; ++i) {
+                    if (typeof object.deals[i] !== "object")
+                        throw TypeError(".mexc.PublicAggreDealsV3Api.deals: object expected");
+                    message.deals[i] = $root.mexc.PublicAggreDealsV3ApiItem.fromObject(object.deals[i]);
+                }
+            }
+            if (object.eventType != null)
+                message.eventType = String(object.eventType);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a PublicAggreDealsV3Api message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof mexc.PublicAggreDealsV3Api
+         * @static
+         * @param {mexc.PublicAggreDealsV3Api} message PublicAggreDealsV3Api
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        PublicAggreDealsV3Api.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.arrays || options.defaults)
+                object.deals = [];
+            if (options.defaults)
+                object.eventType = "";
+            if (message.deals && message.deals.length) {
+                object.deals = [];
+                for (var j = 0; j < message.deals.length; ++j)
+                    object.deals[j] = $root.mexc.PublicAggreDealsV3ApiItem.toObject(message.deals[j], options);
+            }
+            if (message.eventType != null && message.hasOwnProperty("eventType"))
+                object.eventType = message.eventType;
+            return object;
+        };
+
+        /**
+         * Converts this PublicAggreDealsV3Api to JSON.
+         * @function toJSON
+         * @memberof mexc.PublicAggreDealsV3Api
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        PublicAggreDealsV3Api.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         /**
@@ -1592,6 +2125,84 @@ $root.mexc = (function() {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Creates a PublicAggreDealsV3ApiItem message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof mexc.PublicAggreDealsV3ApiItem
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {mexc.PublicAggreDealsV3ApiItem} PublicAggreDealsV3ApiItem
+         */
+        PublicAggreDealsV3ApiItem.fromObject = function fromObject(object) {
+            if (object instanceof $root.mexc.PublicAggreDealsV3ApiItem)
+                return object;
+            var message = new $root.mexc.PublicAggreDealsV3ApiItem();
+            if (object.price != null)
+                message.price = String(object.price);
+            if (object.quantity != null)
+                message.quantity = String(object.quantity);
+            if (object.tradeType != null)
+                message.tradeType = object.tradeType | 0;
+            if (object.time != null)
+                if ($util.Long)
+                    (message.time = $util.Long.fromValue(object.time)).unsigned = false;
+                else if (typeof object.time === "string")
+                    message.time = parseInt(object.time, 10);
+                else if (typeof object.time === "number")
+                    message.time = object.time;
+                else if (typeof object.time === "object")
+                    message.time = new $util.LongBits(object.time.low >>> 0, object.time.high >>> 0).toNumber();
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a PublicAggreDealsV3ApiItem message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof mexc.PublicAggreDealsV3ApiItem
+         * @static
+         * @param {mexc.PublicAggreDealsV3ApiItem} message PublicAggreDealsV3ApiItem
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        PublicAggreDealsV3ApiItem.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.price = "";
+                object.quantity = "";
+                object.tradeType = 0;
+                if ($util.Long) {
+                    var long = new $util.Long(0, 0, false);
+                    object.time = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                } else
+                    object.time = options.longs === String ? "0" : 0;
+            }
+            if (message.price != null && message.hasOwnProperty("price"))
+                object.price = message.price;
+            if (message.quantity != null && message.hasOwnProperty("quantity"))
+                object.quantity = message.quantity;
+            if (message.tradeType != null && message.hasOwnProperty("tradeType"))
+                object.tradeType = message.tradeType;
+            if (message.time != null && message.hasOwnProperty("time"))
+                if (typeof message.time === "number")
+                    object.time = options.longs === String ? String(message.time) : message.time;
+                else
+                    object.time = options.longs === String ? $util.Long.prototype.toString.call(message.time) : options.longs === Number ? new $util.LongBits(message.time.low >>> 0, message.time.high >>> 0).toNumber() : message.time;
+            return object;
+        };
+
+        /**
+         * Converts this PublicAggreDealsV3ApiItem to JSON.
+         * @function toJSON
+         * @memberof mexc.PublicAggreDealsV3ApiItem
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        PublicAggreDealsV3ApiItem.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         /**
@@ -1803,6 +2414,99 @@ $root.mexc = (function() {
         };
 
         /**
+         * Creates a PublicAggreDepthsV3Api message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof mexc.PublicAggreDepthsV3Api
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {mexc.PublicAggreDepthsV3Api} PublicAggreDepthsV3Api
+         */
+        PublicAggreDepthsV3Api.fromObject = function fromObject(object) {
+            if (object instanceof $root.mexc.PublicAggreDepthsV3Api)
+                return object;
+            var message = new $root.mexc.PublicAggreDepthsV3Api();
+            if (object.asks) {
+                if (!Array.isArray(object.asks))
+                    throw TypeError(".mexc.PublicAggreDepthsV3Api.asks: array expected");
+                message.asks = [];
+                for (var i = 0; i < object.asks.length; ++i) {
+                    if (typeof object.asks[i] !== "object")
+                        throw TypeError(".mexc.PublicAggreDepthsV3Api.asks: object expected");
+                    message.asks[i] = $root.mexc.PublicAggreDepthV3ApiItem.fromObject(object.asks[i]);
+                }
+            }
+            if (object.bids) {
+                if (!Array.isArray(object.bids))
+                    throw TypeError(".mexc.PublicAggreDepthsV3Api.bids: array expected");
+                message.bids = [];
+                for (var i = 0; i < object.bids.length; ++i) {
+                    if (typeof object.bids[i] !== "object")
+                        throw TypeError(".mexc.PublicAggreDepthsV3Api.bids: object expected");
+                    message.bids[i] = $root.mexc.PublicAggreDepthV3ApiItem.fromObject(object.bids[i]);
+                }
+            }
+            if (object.eventType != null)
+                message.eventType = String(object.eventType);
+            if (object.fromVersion != null)
+                message.fromVersion = String(object.fromVersion);
+            if (object.toVersion != null)
+                message.toVersion = String(object.toVersion);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a PublicAggreDepthsV3Api message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof mexc.PublicAggreDepthsV3Api
+         * @static
+         * @param {mexc.PublicAggreDepthsV3Api} message PublicAggreDepthsV3Api
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        PublicAggreDepthsV3Api.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.arrays || options.defaults) {
+                object.asks = [];
+                object.bids = [];
+            }
+            if (options.defaults) {
+                object.eventType = "";
+                object.fromVersion = "";
+                object.toVersion = "";
+            }
+            if (message.asks && message.asks.length) {
+                object.asks = [];
+                for (var j = 0; j < message.asks.length; ++j)
+                    object.asks[j] = $root.mexc.PublicAggreDepthV3ApiItem.toObject(message.asks[j], options);
+            }
+            if (message.bids && message.bids.length) {
+                object.bids = [];
+                for (var j = 0; j < message.bids.length; ++j)
+                    object.bids[j] = $root.mexc.PublicAggreDepthV3ApiItem.toObject(message.bids[j], options);
+            }
+            if (message.eventType != null && message.hasOwnProperty("eventType"))
+                object.eventType = message.eventType;
+            if (message.fromVersion != null && message.hasOwnProperty("fromVersion"))
+                object.fromVersion = message.fromVersion;
+            if (message.toVersion != null && message.hasOwnProperty("toVersion"))
+                object.toVersion = message.toVersion;
+            return object;
+        };
+
+        /**
+         * Converts this PublicAggreDepthsV3Api to JSON.
+         * @function toJSON
+         * @memberof mexc.PublicAggreDepthsV3Api
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        PublicAggreDepthsV3Api.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
          * Gets the default type url for PublicAggreDepthsV3Api
          * @function getTypeUrl
          * @memberof mexc.PublicAggreDepthsV3Api
@@ -1958,6 +2662,60 @@ $root.mexc = (function() {
         };
 
         /**
+         * Creates a PublicAggreDepthV3ApiItem message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof mexc.PublicAggreDepthV3ApiItem
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {mexc.PublicAggreDepthV3ApiItem} PublicAggreDepthV3ApiItem
+         */
+        PublicAggreDepthV3ApiItem.fromObject = function fromObject(object) {
+            if (object instanceof $root.mexc.PublicAggreDepthV3ApiItem)
+                return object;
+            var message = new $root.mexc.PublicAggreDepthV3ApiItem();
+            if (object.price != null)
+                message.price = String(object.price);
+            if (object.quantity != null)
+                message.quantity = String(object.quantity);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a PublicAggreDepthV3ApiItem message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof mexc.PublicAggreDepthV3ApiItem
+         * @static
+         * @param {mexc.PublicAggreDepthV3ApiItem} message PublicAggreDepthV3ApiItem
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        PublicAggreDepthV3ApiItem.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.price = "";
+                object.quantity = "";
+            }
+            if (message.price != null && message.hasOwnProperty("price"))
+                object.price = message.price;
+            if (message.quantity != null && message.hasOwnProperty("quantity"))
+                object.quantity = message.quantity;
+            return object;
+        };
+
+        /**
+         * Converts this PublicAggreDepthV3ApiItem to JSON.
+         * @function toJSON
+         * @memberof mexc.PublicAggreDepthV3ApiItem
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        PublicAggreDepthV3ApiItem.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
          * Gets the default type url for PublicAggreDepthV3ApiItem
          * @function getTypeUrl
          * @memberof mexc.PublicAggreDepthV3ApiItem
@@ -2099,6 +2857,65 @@ $root.mexc = (function() {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Creates a PublicBookTickerBatchV3Api message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof mexc.PublicBookTickerBatchV3Api
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {mexc.PublicBookTickerBatchV3Api} PublicBookTickerBatchV3Api
+         */
+        PublicBookTickerBatchV3Api.fromObject = function fromObject(object) {
+            if (object instanceof $root.mexc.PublicBookTickerBatchV3Api)
+                return object;
+            var message = new $root.mexc.PublicBookTickerBatchV3Api();
+            if (object.items) {
+                if (!Array.isArray(object.items))
+                    throw TypeError(".mexc.PublicBookTickerBatchV3Api.items: array expected");
+                message.items = [];
+                for (var i = 0; i < object.items.length; ++i) {
+                    if (typeof object.items[i] !== "object")
+                        throw TypeError(".mexc.PublicBookTickerBatchV3Api.items: object expected");
+                    message.items[i] = $root.mexc.PublicBookTickerV3Api.fromObject(object.items[i]);
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a PublicBookTickerBatchV3Api message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof mexc.PublicBookTickerBatchV3Api
+         * @static
+         * @param {mexc.PublicBookTickerBatchV3Api} message PublicBookTickerBatchV3Api
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        PublicBookTickerBatchV3Api.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.arrays || options.defaults)
+                object.items = [];
+            if (message.items && message.items.length) {
+                object.items = [];
+                for (var j = 0; j < message.items.length; ++j)
+                    object.items[j] = $root.mexc.PublicBookTickerV3Api.toObject(message.items[j], options);
+            }
+            return object;
+        };
+
+        /**
+         * Converts this PublicBookTickerBatchV3Api to JSON.
+         * @function toJSON
+         * @memberof mexc.PublicBookTickerBatchV3Api
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        PublicBookTickerBatchV3Api.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         /**
@@ -2287,6 +3104,70 @@ $root.mexc = (function() {
         };
 
         /**
+         * Creates a PublicBookTickerV3Api message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof mexc.PublicBookTickerV3Api
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {mexc.PublicBookTickerV3Api} PublicBookTickerV3Api
+         */
+        PublicBookTickerV3Api.fromObject = function fromObject(object) {
+            if (object instanceof $root.mexc.PublicBookTickerV3Api)
+                return object;
+            var message = new $root.mexc.PublicBookTickerV3Api();
+            if (object.bidPrice != null)
+                message.bidPrice = String(object.bidPrice);
+            if (object.bidQuantity != null)
+                message.bidQuantity = String(object.bidQuantity);
+            if (object.askPrice != null)
+                message.askPrice = String(object.askPrice);
+            if (object.askQuantity != null)
+                message.askQuantity = String(object.askQuantity);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a PublicBookTickerV3Api message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof mexc.PublicBookTickerV3Api
+         * @static
+         * @param {mexc.PublicBookTickerV3Api} message PublicBookTickerV3Api
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        PublicBookTickerV3Api.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.bidPrice = "";
+                object.bidQuantity = "";
+                object.askPrice = "";
+                object.askQuantity = "";
+            }
+            if (message.bidPrice != null && message.hasOwnProperty("bidPrice"))
+                object.bidPrice = message.bidPrice;
+            if (message.bidQuantity != null && message.hasOwnProperty("bidQuantity"))
+                object.bidQuantity = message.bidQuantity;
+            if (message.askPrice != null && message.hasOwnProperty("askPrice"))
+                object.askPrice = message.askPrice;
+            if (message.askQuantity != null && message.hasOwnProperty("askQuantity"))
+                object.askQuantity = message.askQuantity;
+            return object;
+        };
+
+        /**
+         * Converts this PublicBookTickerV3Api to JSON.
+         * @function toJSON
+         * @memberof mexc.PublicBookTickerV3Api
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        PublicBookTickerV3Api.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
          * Gets the default type url for PublicBookTickerV3Api
          * @function getTypeUrl
          * @memberof mexc.PublicBookTickerV3Api
@@ -2443,6 +3324,71 @@ $root.mexc = (function() {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Creates a PublicDealsV3Api message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof mexc.PublicDealsV3Api
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {mexc.PublicDealsV3Api} PublicDealsV3Api
+         */
+        PublicDealsV3Api.fromObject = function fromObject(object) {
+            if (object instanceof $root.mexc.PublicDealsV3Api)
+                return object;
+            var message = new $root.mexc.PublicDealsV3Api();
+            if (object.deals) {
+                if (!Array.isArray(object.deals))
+                    throw TypeError(".mexc.PublicDealsV3Api.deals: array expected");
+                message.deals = [];
+                for (var i = 0; i < object.deals.length; ++i) {
+                    if (typeof object.deals[i] !== "object")
+                        throw TypeError(".mexc.PublicDealsV3Api.deals: object expected");
+                    message.deals[i] = $root.mexc.PublicDealsV3ApiItem.fromObject(object.deals[i]);
+                }
+            }
+            if (object.eventType != null)
+                message.eventType = String(object.eventType);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a PublicDealsV3Api message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof mexc.PublicDealsV3Api
+         * @static
+         * @param {mexc.PublicDealsV3Api} message PublicDealsV3Api
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        PublicDealsV3Api.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.arrays || options.defaults)
+                object.deals = [];
+            if (options.defaults)
+                object.eventType = "";
+            if (message.deals && message.deals.length) {
+                object.deals = [];
+                for (var j = 0; j < message.deals.length; ++j)
+                    object.deals[j] = $root.mexc.PublicDealsV3ApiItem.toObject(message.deals[j], options);
+            }
+            if (message.eventType != null && message.hasOwnProperty("eventType"))
+                object.eventType = message.eventType;
+            return object;
+        };
+
+        /**
+         * Converts this PublicDealsV3Api to JSON.
+         * @function toJSON
+         * @memberof mexc.PublicDealsV3Api
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        PublicDealsV3Api.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         /**
@@ -2631,6 +3577,84 @@ $root.mexc = (function() {
         };
 
         /**
+         * Creates a PublicDealsV3ApiItem message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof mexc.PublicDealsV3ApiItem
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {mexc.PublicDealsV3ApiItem} PublicDealsV3ApiItem
+         */
+        PublicDealsV3ApiItem.fromObject = function fromObject(object) {
+            if (object instanceof $root.mexc.PublicDealsV3ApiItem)
+                return object;
+            var message = new $root.mexc.PublicDealsV3ApiItem();
+            if (object.price != null)
+                message.price = String(object.price);
+            if (object.quantity != null)
+                message.quantity = String(object.quantity);
+            if (object.tradeType != null)
+                message.tradeType = object.tradeType | 0;
+            if (object.time != null)
+                if ($util.Long)
+                    (message.time = $util.Long.fromValue(object.time)).unsigned = false;
+                else if (typeof object.time === "string")
+                    message.time = parseInt(object.time, 10);
+                else if (typeof object.time === "number")
+                    message.time = object.time;
+                else if (typeof object.time === "object")
+                    message.time = new $util.LongBits(object.time.low >>> 0, object.time.high >>> 0).toNumber();
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a PublicDealsV3ApiItem message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof mexc.PublicDealsV3ApiItem
+         * @static
+         * @param {mexc.PublicDealsV3ApiItem} message PublicDealsV3ApiItem
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        PublicDealsV3ApiItem.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.price = "";
+                object.quantity = "";
+                object.tradeType = 0;
+                if ($util.Long) {
+                    var long = new $util.Long(0, 0, false);
+                    object.time = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                } else
+                    object.time = options.longs === String ? "0" : 0;
+            }
+            if (message.price != null && message.hasOwnProperty("price"))
+                object.price = message.price;
+            if (message.quantity != null && message.hasOwnProperty("quantity"))
+                object.quantity = message.quantity;
+            if (message.tradeType != null && message.hasOwnProperty("tradeType"))
+                object.tradeType = message.tradeType;
+            if (message.time != null && message.hasOwnProperty("time"))
+                if (typeof message.time === "number")
+                    object.time = options.longs === String ? String(message.time) : message.time;
+                else
+                    object.time = options.longs === String ? $util.Long.prototype.toString.call(message.time) : options.longs === Number ? new $util.LongBits(message.time.low >>> 0, message.time.high >>> 0).toNumber() : message.time;
+            return object;
+        };
+
+        /**
+         * Converts this PublicDealsV3ApiItem to JSON.
+         * @function toJSON
+         * @memberof mexc.PublicDealsV3ApiItem
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        PublicDealsV3ApiItem.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
          * Gets the default type url for PublicDealsV3ApiItem
          * @function getTypeUrl
          * @memberof mexc.PublicDealsV3ApiItem
@@ -2787,6 +3811,71 @@ $root.mexc = (function() {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Creates a PublicIncreaseDepthsBatchV3Api message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof mexc.PublicIncreaseDepthsBatchV3Api
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {mexc.PublicIncreaseDepthsBatchV3Api} PublicIncreaseDepthsBatchV3Api
+         */
+        PublicIncreaseDepthsBatchV3Api.fromObject = function fromObject(object) {
+            if (object instanceof $root.mexc.PublicIncreaseDepthsBatchV3Api)
+                return object;
+            var message = new $root.mexc.PublicIncreaseDepthsBatchV3Api();
+            if (object.items) {
+                if (!Array.isArray(object.items))
+                    throw TypeError(".mexc.PublicIncreaseDepthsBatchV3Api.items: array expected");
+                message.items = [];
+                for (var i = 0; i < object.items.length; ++i) {
+                    if (typeof object.items[i] !== "object")
+                        throw TypeError(".mexc.PublicIncreaseDepthsBatchV3Api.items: object expected");
+                    message.items[i] = $root.mexc.PublicIncreaseDepthsV3Api.fromObject(object.items[i]);
+                }
+            }
+            if (object.eventType != null)
+                message.eventType = String(object.eventType);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a PublicIncreaseDepthsBatchV3Api message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof mexc.PublicIncreaseDepthsBatchV3Api
+         * @static
+         * @param {mexc.PublicIncreaseDepthsBatchV3Api} message PublicIncreaseDepthsBatchV3Api
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        PublicIncreaseDepthsBatchV3Api.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.arrays || options.defaults)
+                object.items = [];
+            if (options.defaults)
+                object.eventType = "";
+            if (message.items && message.items.length) {
+                object.items = [];
+                for (var j = 0; j < message.items.length; ++j)
+                    object.items[j] = $root.mexc.PublicIncreaseDepthsV3Api.toObject(message.items[j], options);
+            }
+            if (message.eventType != null && message.hasOwnProperty("eventType"))
+                object.eventType = message.eventType;
+            return object;
+        };
+
+        /**
+         * Converts this PublicIncreaseDepthsBatchV3Api to JSON.
+         * @function toJSON
+         * @memberof mexc.PublicIncreaseDepthsBatchV3Api
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        PublicIncreaseDepthsBatchV3Api.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         /**
@@ -2983,6 +4072,94 @@ $root.mexc = (function() {
         };
 
         /**
+         * Creates a PublicIncreaseDepthsV3Api message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof mexc.PublicIncreaseDepthsV3Api
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {mexc.PublicIncreaseDepthsV3Api} PublicIncreaseDepthsV3Api
+         */
+        PublicIncreaseDepthsV3Api.fromObject = function fromObject(object) {
+            if (object instanceof $root.mexc.PublicIncreaseDepthsV3Api)
+                return object;
+            var message = new $root.mexc.PublicIncreaseDepthsV3Api();
+            if (object.asks) {
+                if (!Array.isArray(object.asks))
+                    throw TypeError(".mexc.PublicIncreaseDepthsV3Api.asks: array expected");
+                message.asks = [];
+                for (var i = 0; i < object.asks.length; ++i) {
+                    if (typeof object.asks[i] !== "object")
+                        throw TypeError(".mexc.PublicIncreaseDepthsV3Api.asks: object expected");
+                    message.asks[i] = $root.mexc.PublicIncreaseDepthV3ApiItem.fromObject(object.asks[i]);
+                }
+            }
+            if (object.bids) {
+                if (!Array.isArray(object.bids))
+                    throw TypeError(".mexc.PublicIncreaseDepthsV3Api.bids: array expected");
+                message.bids = [];
+                for (var i = 0; i < object.bids.length; ++i) {
+                    if (typeof object.bids[i] !== "object")
+                        throw TypeError(".mexc.PublicIncreaseDepthsV3Api.bids: object expected");
+                    message.bids[i] = $root.mexc.PublicIncreaseDepthV3ApiItem.fromObject(object.bids[i]);
+                }
+            }
+            if (object.eventType != null)
+                message.eventType = String(object.eventType);
+            if (object.version != null)
+                message.version = String(object.version);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a PublicIncreaseDepthsV3Api message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof mexc.PublicIncreaseDepthsV3Api
+         * @static
+         * @param {mexc.PublicIncreaseDepthsV3Api} message PublicIncreaseDepthsV3Api
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        PublicIncreaseDepthsV3Api.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.arrays || options.defaults) {
+                object.asks = [];
+                object.bids = [];
+            }
+            if (options.defaults) {
+                object.eventType = "";
+                object.version = "";
+            }
+            if (message.asks && message.asks.length) {
+                object.asks = [];
+                for (var j = 0; j < message.asks.length; ++j)
+                    object.asks[j] = $root.mexc.PublicIncreaseDepthV3ApiItem.toObject(message.asks[j], options);
+            }
+            if (message.bids && message.bids.length) {
+                object.bids = [];
+                for (var j = 0; j < message.bids.length; ++j)
+                    object.bids[j] = $root.mexc.PublicIncreaseDepthV3ApiItem.toObject(message.bids[j], options);
+            }
+            if (message.eventType != null && message.hasOwnProperty("eventType"))
+                object.eventType = message.eventType;
+            if (message.version != null && message.hasOwnProperty("version"))
+                object.version = message.version;
+            return object;
+        };
+
+        /**
+         * Converts this PublicIncreaseDepthsV3Api to JSON.
+         * @function toJSON
+         * @memberof mexc.PublicIncreaseDepthsV3Api
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        PublicIncreaseDepthsV3Api.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
          * Gets the default type url for PublicIncreaseDepthsV3Api
          * @function getTypeUrl
          * @memberof mexc.PublicIncreaseDepthsV3Api
@@ -3135,6 +4312,60 @@ $root.mexc = (function() {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Creates a PublicIncreaseDepthV3ApiItem message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof mexc.PublicIncreaseDepthV3ApiItem
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {mexc.PublicIncreaseDepthV3ApiItem} PublicIncreaseDepthV3ApiItem
+         */
+        PublicIncreaseDepthV3ApiItem.fromObject = function fromObject(object) {
+            if (object instanceof $root.mexc.PublicIncreaseDepthV3ApiItem)
+                return object;
+            var message = new $root.mexc.PublicIncreaseDepthV3ApiItem();
+            if (object.price != null)
+                message.price = String(object.price);
+            if (object.quantity != null)
+                message.quantity = String(object.quantity);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a PublicIncreaseDepthV3ApiItem message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof mexc.PublicIncreaseDepthV3ApiItem
+         * @static
+         * @param {mexc.PublicIncreaseDepthV3ApiItem} message PublicIncreaseDepthV3ApiItem
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        PublicIncreaseDepthV3ApiItem.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.price = "";
+                object.quantity = "";
+            }
+            if (message.price != null && message.hasOwnProperty("price"))
+                object.price = message.price;
+            if (message.quantity != null && message.hasOwnProperty("quantity"))
+                object.quantity = message.quantity;
+            return object;
+        };
+
+        /**
+         * Converts this PublicIncreaseDepthV3ApiItem to JSON.
+         * @function toJSON
+         * @memberof mexc.PublicIncreaseDepthV3ApiItem
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        PublicIncreaseDepthV3ApiItem.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         /**
@@ -3331,6 +4562,94 @@ $root.mexc = (function() {
         };
 
         /**
+         * Creates a PublicLimitDepthsV3Api message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof mexc.PublicLimitDepthsV3Api
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {mexc.PublicLimitDepthsV3Api} PublicLimitDepthsV3Api
+         */
+        PublicLimitDepthsV3Api.fromObject = function fromObject(object) {
+            if (object instanceof $root.mexc.PublicLimitDepthsV3Api)
+                return object;
+            var message = new $root.mexc.PublicLimitDepthsV3Api();
+            if (object.asks) {
+                if (!Array.isArray(object.asks))
+                    throw TypeError(".mexc.PublicLimitDepthsV3Api.asks: array expected");
+                message.asks = [];
+                for (var i = 0; i < object.asks.length; ++i) {
+                    if (typeof object.asks[i] !== "object")
+                        throw TypeError(".mexc.PublicLimitDepthsV3Api.asks: object expected");
+                    message.asks[i] = $root.mexc.PublicLimitDepthV3ApiItem.fromObject(object.asks[i]);
+                }
+            }
+            if (object.bids) {
+                if (!Array.isArray(object.bids))
+                    throw TypeError(".mexc.PublicLimitDepthsV3Api.bids: array expected");
+                message.bids = [];
+                for (var i = 0; i < object.bids.length; ++i) {
+                    if (typeof object.bids[i] !== "object")
+                        throw TypeError(".mexc.PublicLimitDepthsV3Api.bids: object expected");
+                    message.bids[i] = $root.mexc.PublicLimitDepthV3ApiItem.fromObject(object.bids[i]);
+                }
+            }
+            if (object.eventType != null)
+                message.eventType = String(object.eventType);
+            if (object.version != null)
+                message.version = String(object.version);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a PublicLimitDepthsV3Api message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof mexc.PublicLimitDepthsV3Api
+         * @static
+         * @param {mexc.PublicLimitDepthsV3Api} message PublicLimitDepthsV3Api
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        PublicLimitDepthsV3Api.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.arrays || options.defaults) {
+                object.asks = [];
+                object.bids = [];
+            }
+            if (options.defaults) {
+                object.eventType = "";
+                object.version = "";
+            }
+            if (message.asks && message.asks.length) {
+                object.asks = [];
+                for (var j = 0; j < message.asks.length; ++j)
+                    object.asks[j] = $root.mexc.PublicLimitDepthV3ApiItem.toObject(message.asks[j], options);
+            }
+            if (message.bids && message.bids.length) {
+                object.bids = [];
+                for (var j = 0; j < message.bids.length; ++j)
+                    object.bids[j] = $root.mexc.PublicLimitDepthV3ApiItem.toObject(message.bids[j], options);
+            }
+            if (message.eventType != null && message.hasOwnProperty("eventType"))
+                object.eventType = message.eventType;
+            if (message.version != null && message.hasOwnProperty("version"))
+                object.version = message.version;
+            return object;
+        };
+
+        /**
+         * Converts this PublicLimitDepthsV3Api to JSON.
+         * @function toJSON
+         * @memberof mexc.PublicLimitDepthsV3Api
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        PublicLimitDepthsV3Api.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
          * Gets the default type url for PublicLimitDepthsV3Api
          * @function getTypeUrl
          * @memberof mexc.PublicLimitDepthsV3Api
@@ -3483,6 +4802,60 @@ $root.mexc = (function() {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Creates a PublicLimitDepthV3ApiItem message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof mexc.PublicLimitDepthV3ApiItem
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {mexc.PublicLimitDepthV3ApiItem} PublicLimitDepthV3ApiItem
+         */
+        PublicLimitDepthV3ApiItem.fromObject = function fromObject(object) {
+            if (object instanceof $root.mexc.PublicLimitDepthV3ApiItem)
+                return object;
+            var message = new $root.mexc.PublicLimitDepthV3ApiItem();
+            if (object.price != null)
+                message.price = String(object.price);
+            if (object.quantity != null)
+                message.quantity = String(object.quantity);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a PublicLimitDepthV3ApiItem message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof mexc.PublicLimitDepthV3ApiItem
+         * @static
+         * @param {mexc.PublicLimitDepthV3ApiItem} message PublicLimitDepthV3ApiItem
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        PublicLimitDepthV3ApiItem.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.price = "";
+                object.quantity = "";
+            }
+            if (message.price != null && message.hasOwnProperty("price"))
+                object.price = message.price;
+            if (message.quantity != null && message.hasOwnProperty("quantity"))
+                object.quantity = message.quantity;
+            return object;
+        };
+
+        /**
+         * Converts this PublicLimitDepthV3ApiItem to JSON.
+         * @function toJSON
+         * @memberof mexc.PublicLimitDepthV3ApiItem
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        PublicLimitDepthV3ApiItem.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         /**
@@ -3791,6 +5164,110 @@ $root.mexc = (function() {
         };
 
         /**
+         * Creates a PublicMiniTickerV3Api message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof mexc.PublicMiniTickerV3Api
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {mexc.PublicMiniTickerV3Api} PublicMiniTickerV3Api
+         */
+        PublicMiniTickerV3Api.fromObject = function fromObject(object) {
+            if (object instanceof $root.mexc.PublicMiniTickerV3Api)
+                return object;
+            var message = new $root.mexc.PublicMiniTickerV3Api();
+            if (object.symbol != null)
+                message.symbol = String(object.symbol);
+            if (object.price != null)
+                message.price = String(object.price);
+            if (object.rate != null)
+                message.rate = String(object.rate);
+            if (object.zonedRate != null)
+                message.zonedRate = String(object.zonedRate);
+            if (object.high != null)
+                message.high = String(object.high);
+            if (object.low != null)
+                message.low = String(object.low);
+            if (object.volume != null)
+                message.volume = String(object.volume);
+            if (object.quantity != null)
+                message.quantity = String(object.quantity);
+            if (object.lastCloseRate != null)
+                message.lastCloseRate = String(object.lastCloseRate);
+            if (object.lastCloseZonedRate != null)
+                message.lastCloseZonedRate = String(object.lastCloseZonedRate);
+            if (object.lastCloseHigh != null)
+                message.lastCloseHigh = String(object.lastCloseHigh);
+            if (object.lastCloseLow != null)
+                message.lastCloseLow = String(object.lastCloseLow);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a PublicMiniTickerV3Api message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof mexc.PublicMiniTickerV3Api
+         * @static
+         * @param {mexc.PublicMiniTickerV3Api} message PublicMiniTickerV3Api
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        PublicMiniTickerV3Api.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.symbol = "";
+                object.price = "";
+                object.rate = "";
+                object.zonedRate = "";
+                object.high = "";
+                object.low = "";
+                object.volume = "";
+                object.quantity = "";
+                object.lastCloseRate = "";
+                object.lastCloseZonedRate = "";
+                object.lastCloseHigh = "";
+                object.lastCloseLow = "";
+            }
+            if (message.symbol != null && message.hasOwnProperty("symbol"))
+                object.symbol = message.symbol;
+            if (message.price != null && message.hasOwnProperty("price"))
+                object.price = message.price;
+            if (message.rate != null && message.hasOwnProperty("rate"))
+                object.rate = message.rate;
+            if (message.zonedRate != null && message.hasOwnProperty("zonedRate"))
+                object.zonedRate = message.zonedRate;
+            if (message.high != null && message.hasOwnProperty("high"))
+                object.high = message.high;
+            if (message.low != null && message.hasOwnProperty("low"))
+                object.low = message.low;
+            if (message.volume != null && message.hasOwnProperty("volume"))
+                object.volume = message.volume;
+            if (message.quantity != null && message.hasOwnProperty("quantity"))
+                object.quantity = message.quantity;
+            if (message.lastCloseRate != null && message.hasOwnProperty("lastCloseRate"))
+                object.lastCloseRate = message.lastCloseRate;
+            if (message.lastCloseZonedRate != null && message.hasOwnProperty("lastCloseZonedRate"))
+                object.lastCloseZonedRate = message.lastCloseZonedRate;
+            if (message.lastCloseHigh != null && message.hasOwnProperty("lastCloseHigh"))
+                object.lastCloseHigh = message.lastCloseHigh;
+            if (message.lastCloseLow != null && message.hasOwnProperty("lastCloseLow"))
+                object.lastCloseLow = message.lastCloseLow;
+            return object;
+        };
+
+        /**
+         * Converts this PublicMiniTickerV3Api to JSON.
+         * @function toJSON
+         * @memberof mexc.PublicMiniTickerV3Api
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        PublicMiniTickerV3Api.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
          * Gets the default type url for PublicMiniTickerV3Api
          * @function getTypeUrl
          * @memberof mexc.PublicMiniTickerV3Api
@@ -3932,6 +5409,65 @@ $root.mexc = (function() {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Creates a PublicMiniTickersV3Api message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof mexc.PublicMiniTickersV3Api
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {mexc.PublicMiniTickersV3Api} PublicMiniTickersV3Api
+         */
+        PublicMiniTickersV3Api.fromObject = function fromObject(object) {
+            if (object instanceof $root.mexc.PublicMiniTickersV3Api)
+                return object;
+            var message = new $root.mexc.PublicMiniTickersV3Api();
+            if (object.items) {
+                if (!Array.isArray(object.items))
+                    throw TypeError(".mexc.PublicMiniTickersV3Api.items: array expected");
+                message.items = [];
+                for (var i = 0; i < object.items.length; ++i) {
+                    if (typeof object.items[i] !== "object")
+                        throw TypeError(".mexc.PublicMiniTickersV3Api.items: object expected");
+                    message.items[i] = $root.mexc.PublicMiniTickerV3Api.fromObject(object.items[i]);
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a PublicMiniTickersV3Api message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof mexc.PublicMiniTickersV3Api
+         * @static
+         * @param {mexc.PublicMiniTickersV3Api} message PublicMiniTickersV3Api
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        PublicMiniTickersV3Api.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.arrays || options.defaults)
+                object.items = [];
+            if (message.items && message.items.length) {
+                object.items = [];
+                for (var j = 0; j < message.items.length; ++j)
+                    object.items[j] = $root.mexc.PublicMiniTickerV3Api.toObject(message.items[j], options);
+            }
+            return object;
+        };
+
+        /**
+         * Converts this PublicMiniTickersV3Api to JSON.
+         * @function toJSON
+         * @memberof mexc.PublicMiniTickersV3Api
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        PublicMiniTickersV3Api.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         /**
@@ -4192,6 +5728,123 @@ $root.mexc = (function() {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Creates a PublicSpotKlineV3Api message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof mexc.PublicSpotKlineV3Api
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {mexc.PublicSpotKlineV3Api} PublicSpotKlineV3Api
+         */
+        PublicSpotKlineV3Api.fromObject = function fromObject(object) {
+            if (object instanceof $root.mexc.PublicSpotKlineV3Api)
+                return object;
+            var message = new $root.mexc.PublicSpotKlineV3Api();
+            if (object.interval != null)
+                message.interval = String(object.interval);
+            if (object.windowStart != null)
+                if ($util.Long)
+                    (message.windowStart = $util.Long.fromValue(object.windowStart)).unsigned = false;
+                else if (typeof object.windowStart === "string")
+                    message.windowStart = parseInt(object.windowStart, 10);
+                else if (typeof object.windowStart === "number")
+                    message.windowStart = object.windowStart;
+                else if (typeof object.windowStart === "object")
+                    message.windowStart = new $util.LongBits(object.windowStart.low >>> 0, object.windowStart.high >>> 0).toNumber();
+            if (object.openingPrice != null)
+                message.openingPrice = String(object.openingPrice);
+            if (object.closingPrice != null)
+                message.closingPrice = String(object.closingPrice);
+            if (object.highestPrice != null)
+                message.highestPrice = String(object.highestPrice);
+            if (object.lowestPrice != null)
+                message.lowestPrice = String(object.lowestPrice);
+            if (object.volume != null)
+                message.volume = String(object.volume);
+            if (object.amount != null)
+                message.amount = String(object.amount);
+            if (object.windowEnd != null)
+                if ($util.Long)
+                    (message.windowEnd = $util.Long.fromValue(object.windowEnd)).unsigned = false;
+                else if (typeof object.windowEnd === "string")
+                    message.windowEnd = parseInt(object.windowEnd, 10);
+                else if (typeof object.windowEnd === "number")
+                    message.windowEnd = object.windowEnd;
+                else if (typeof object.windowEnd === "object")
+                    message.windowEnd = new $util.LongBits(object.windowEnd.low >>> 0, object.windowEnd.high >>> 0).toNumber();
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a PublicSpotKlineV3Api message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof mexc.PublicSpotKlineV3Api
+         * @static
+         * @param {mexc.PublicSpotKlineV3Api} message PublicSpotKlineV3Api
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        PublicSpotKlineV3Api.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.interval = "";
+                if ($util.Long) {
+                    var long = new $util.Long(0, 0, false);
+                    object.windowStart = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                } else
+                    object.windowStart = options.longs === String ? "0" : 0;
+                object.openingPrice = "";
+                object.closingPrice = "";
+                object.highestPrice = "";
+                object.lowestPrice = "";
+                object.volume = "";
+                object.amount = "";
+                if ($util.Long) {
+                    var long = new $util.Long(0, 0, false);
+                    object.windowEnd = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                } else
+                    object.windowEnd = options.longs === String ? "0" : 0;
+            }
+            if (message.interval != null && message.hasOwnProperty("interval"))
+                object.interval = message.interval;
+            if (message.windowStart != null && message.hasOwnProperty("windowStart"))
+                if (typeof message.windowStart === "number")
+                    object.windowStart = options.longs === String ? String(message.windowStart) : message.windowStart;
+                else
+                    object.windowStart = options.longs === String ? $util.Long.prototype.toString.call(message.windowStart) : options.longs === Number ? new $util.LongBits(message.windowStart.low >>> 0, message.windowStart.high >>> 0).toNumber() : message.windowStart;
+            if (message.openingPrice != null && message.hasOwnProperty("openingPrice"))
+                object.openingPrice = message.openingPrice;
+            if (message.closingPrice != null && message.hasOwnProperty("closingPrice"))
+                object.closingPrice = message.closingPrice;
+            if (message.highestPrice != null && message.hasOwnProperty("highestPrice"))
+                object.highestPrice = message.highestPrice;
+            if (message.lowestPrice != null && message.hasOwnProperty("lowestPrice"))
+                object.lowestPrice = message.lowestPrice;
+            if (message.volume != null && message.hasOwnProperty("volume"))
+                object.volume = message.volume;
+            if (message.amount != null && message.hasOwnProperty("amount"))
+                object.amount = message.amount;
+            if (message.windowEnd != null && message.hasOwnProperty("windowEnd"))
+                if (typeof message.windowEnd === "number")
+                    object.windowEnd = options.longs === String ? String(message.windowEnd) : message.windowEnd;
+                else
+                    object.windowEnd = options.longs === String ? $util.Long.prototype.toString.call(message.windowEnd) : options.longs === Number ? new $util.LongBits(message.windowEnd.low >>> 0, message.windowEnd.high >>> 0).toNumber() : message.windowEnd;
+            return object;
+        };
+
+        /**
+         * Converts this PublicSpotKlineV3Api to JSON.
+         * @function toJSON
+         * @memberof mexc.PublicSpotKlineV3Api
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        PublicSpotKlineV3Api.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         /**
@@ -4631,6 +6284,253 @@ $root.mexc = (function() {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Creates a PushDataV3ApiWrapper message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof mexc.PushDataV3ApiWrapper
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {mexc.PushDataV3ApiWrapper} PushDataV3ApiWrapper
+         */
+        PushDataV3ApiWrapper.fromObject = function fromObject(object) {
+            if (object instanceof $root.mexc.PushDataV3ApiWrapper)
+                return object;
+            var message = new $root.mexc.PushDataV3ApiWrapper();
+            if (object.channel != null)
+                message.channel = String(object.channel);
+            if (object.publicDeals != null) {
+                if (typeof object.publicDeals !== "object")
+                    throw TypeError(".mexc.PushDataV3ApiWrapper.publicDeals: object expected");
+                message.publicDeals = $root.mexc.PublicDealsV3Api.fromObject(object.publicDeals);
+            }
+            if (object.publicIncreaseDepths != null) {
+                if (typeof object.publicIncreaseDepths !== "object")
+                    throw TypeError(".mexc.PushDataV3ApiWrapper.publicIncreaseDepths: object expected");
+                message.publicIncreaseDepths = $root.mexc.PublicIncreaseDepthsV3Api.fromObject(object.publicIncreaseDepths);
+            }
+            if (object.publicLimitDepths != null) {
+                if (typeof object.publicLimitDepths !== "object")
+                    throw TypeError(".mexc.PushDataV3ApiWrapper.publicLimitDepths: object expected");
+                message.publicLimitDepths = $root.mexc.PublicLimitDepthsV3Api.fromObject(object.publicLimitDepths);
+            }
+            if (object.privateOrders != null) {
+                if (typeof object.privateOrders !== "object")
+                    throw TypeError(".mexc.PushDataV3ApiWrapper.privateOrders: object expected");
+                message.privateOrders = $root.mexc.PrivateOrdersV3Api.fromObject(object.privateOrders);
+            }
+            if (object.publicBookTicker != null) {
+                if (typeof object.publicBookTicker !== "object")
+                    throw TypeError(".mexc.PushDataV3ApiWrapper.publicBookTicker: object expected");
+                message.publicBookTicker = $root.mexc.PublicBookTickerV3Api.fromObject(object.publicBookTicker);
+            }
+            if (object.privateDeals != null) {
+                if (typeof object.privateDeals !== "object")
+                    throw TypeError(".mexc.PushDataV3ApiWrapper.privateDeals: object expected");
+                message.privateDeals = $root.mexc.PrivateDealsV3Api.fromObject(object.privateDeals);
+            }
+            if (object.privateAccount != null) {
+                if (typeof object.privateAccount !== "object")
+                    throw TypeError(".mexc.PushDataV3ApiWrapper.privateAccount: object expected");
+                message.privateAccount = $root.mexc.PrivateAccountV3Api.fromObject(object.privateAccount);
+            }
+            if (object.publicSpotKline != null) {
+                if (typeof object.publicSpotKline !== "object")
+                    throw TypeError(".mexc.PushDataV3ApiWrapper.publicSpotKline: object expected");
+                message.publicSpotKline = $root.mexc.PublicSpotKlineV3Api.fromObject(object.publicSpotKline);
+            }
+            if (object.publicMiniTicker != null) {
+                if (typeof object.publicMiniTicker !== "object")
+                    throw TypeError(".mexc.PushDataV3ApiWrapper.publicMiniTicker: object expected");
+                message.publicMiniTicker = $root.mexc.PublicMiniTickerV3Api.fromObject(object.publicMiniTicker);
+            }
+            if (object.publicMiniTickers != null) {
+                if (typeof object.publicMiniTickers !== "object")
+                    throw TypeError(".mexc.PushDataV3ApiWrapper.publicMiniTickers: object expected");
+                message.publicMiniTickers = $root.mexc.PublicMiniTickersV3Api.fromObject(object.publicMiniTickers);
+            }
+            if (object.publicBookTickerBatch != null) {
+                if (typeof object.publicBookTickerBatch !== "object")
+                    throw TypeError(".mexc.PushDataV3ApiWrapper.publicBookTickerBatch: object expected");
+                message.publicBookTickerBatch = $root.mexc.PublicBookTickerBatchV3Api.fromObject(object.publicBookTickerBatch);
+            }
+            if (object.publicIncreaseDepthsBatch != null) {
+                if (typeof object.publicIncreaseDepthsBatch !== "object")
+                    throw TypeError(".mexc.PushDataV3ApiWrapper.publicIncreaseDepthsBatch: object expected");
+                message.publicIncreaseDepthsBatch = $root.mexc.PublicIncreaseDepthsBatchV3Api.fromObject(object.publicIncreaseDepthsBatch);
+            }
+            if (object.publicAggreDepths != null) {
+                if (typeof object.publicAggreDepths !== "object")
+                    throw TypeError(".mexc.PushDataV3ApiWrapper.publicAggreDepths: object expected");
+                message.publicAggreDepths = $root.mexc.PublicAggreDepthsV3Api.fromObject(object.publicAggreDepths);
+            }
+            if (object.publicAggreDeals != null) {
+                if (typeof object.publicAggreDeals !== "object")
+                    throw TypeError(".mexc.PushDataV3ApiWrapper.publicAggreDeals: object expected");
+                message.publicAggreDeals = $root.mexc.PublicAggreDealsV3Api.fromObject(object.publicAggreDeals);
+            }
+            if (object.publicAggreBookTicker != null) {
+                if (typeof object.publicAggreBookTicker !== "object")
+                    throw TypeError(".mexc.PushDataV3ApiWrapper.publicAggreBookTicker: object expected");
+                message.publicAggreBookTicker = $root.mexc.PublicAggreBookTickerV3Api.fromObject(object.publicAggreBookTicker);
+            }
+            if (object.symbol != null)
+                message.symbol = String(object.symbol);
+            if (object.symbolId != null)
+                message.symbolId = String(object.symbolId);
+            if (object.createTime != null)
+                if ($util.Long)
+                    (message.createTime = $util.Long.fromValue(object.createTime)).unsigned = false;
+                else if (typeof object.createTime === "string")
+                    message.createTime = parseInt(object.createTime, 10);
+                else if (typeof object.createTime === "number")
+                    message.createTime = object.createTime;
+                else if (typeof object.createTime === "object")
+                    message.createTime = new $util.LongBits(object.createTime.low >>> 0, object.createTime.high >>> 0).toNumber();
+            if (object.sendTime != null)
+                if ($util.Long)
+                    (message.sendTime = $util.Long.fromValue(object.sendTime)).unsigned = false;
+                else if (typeof object.sendTime === "string")
+                    message.sendTime = parseInt(object.sendTime, 10);
+                else if (typeof object.sendTime === "number")
+                    message.sendTime = object.sendTime;
+                else if (typeof object.sendTime === "object")
+                    message.sendTime = new $util.LongBits(object.sendTime.low >>> 0, object.sendTime.high >>> 0).toNumber();
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a PushDataV3ApiWrapper message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof mexc.PushDataV3ApiWrapper
+         * @static
+         * @param {mexc.PushDataV3ApiWrapper} message PushDataV3ApiWrapper
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        PushDataV3ApiWrapper.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.channel = "";
+                object.symbol = "";
+                object.symbolId = "";
+                if ($util.Long) {
+                    var long = new $util.Long(0, 0, false);
+                    object.createTime = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                } else
+                    object.createTime = options.longs === String ? "0" : 0;
+                if ($util.Long) {
+                    var long = new $util.Long(0, 0, false);
+                    object.sendTime = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                } else
+                    object.sendTime = options.longs === String ? "0" : 0;
+            }
+            if (message.channel != null && message.hasOwnProperty("channel"))
+                object.channel = message.channel;
+            if (message.symbol != null && message.hasOwnProperty("symbol"))
+                object.symbol = message.symbol;
+            if (message.symbolId != null && message.hasOwnProperty("symbolId"))
+                object.symbolId = message.symbolId;
+            if (message.createTime != null && message.hasOwnProperty("createTime"))
+                if (typeof message.createTime === "number")
+                    object.createTime = options.longs === String ? String(message.createTime) : message.createTime;
+                else
+                    object.createTime = options.longs === String ? $util.Long.prototype.toString.call(message.createTime) : options.longs === Number ? new $util.LongBits(message.createTime.low >>> 0, message.createTime.high >>> 0).toNumber() : message.createTime;
+            if (message.sendTime != null && message.hasOwnProperty("sendTime"))
+                if (typeof message.sendTime === "number")
+                    object.sendTime = options.longs === String ? String(message.sendTime) : message.sendTime;
+                else
+                    object.sendTime = options.longs === String ? $util.Long.prototype.toString.call(message.sendTime) : options.longs === Number ? new $util.LongBits(message.sendTime.low >>> 0, message.sendTime.high >>> 0).toNumber() : message.sendTime;
+            if (message.publicDeals != null && message.hasOwnProperty("publicDeals")) {
+                object.publicDeals = $root.mexc.PublicDealsV3Api.toObject(message.publicDeals, options);
+                if (options.oneofs)
+                    object.body = "publicDeals";
+            }
+            if (message.publicIncreaseDepths != null && message.hasOwnProperty("publicIncreaseDepths")) {
+                object.publicIncreaseDepths = $root.mexc.PublicIncreaseDepthsV3Api.toObject(message.publicIncreaseDepths, options);
+                if (options.oneofs)
+                    object.body = "publicIncreaseDepths";
+            }
+            if (message.publicLimitDepths != null && message.hasOwnProperty("publicLimitDepths")) {
+                object.publicLimitDepths = $root.mexc.PublicLimitDepthsV3Api.toObject(message.publicLimitDepths, options);
+                if (options.oneofs)
+                    object.body = "publicLimitDepths";
+            }
+            if (message.privateOrders != null && message.hasOwnProperty("privateOrders")) {
+                object.privateOrders = $root.mexc.PrivateOrdersV3Api.toObject(message.privateOrders, options);
+                if (options.oneofs)
+                    object.body = "privateOrders";
+            }
+            if (message.publicBookTicker != null && message.hasOwnProperty("publicBookTicker")) {
+                object.publicBookTicker = $root.mexc.PublicBookTickerV3Api.toObject(message.publicBookTicker, options);
+                if (options.oneofs)
+                    object.body = "publicBookTicker";
+            }
+            if (message.privateDeals != null && message.hasOwnProperty("privateDeals")) {
+                object.privateDeals = $root.mexc.PrivateDealsV3Api.toObject(message.privateDeals, options);
+                if (options.oneofs)
+                    object.body = "privateDeals";
+            }
+            if (message.privateAccount != null && message.hasOwnProperty("privateAccount")) {
+                object.privateAccount = $root.mexc.PrivateAccountV3Api.toObject(message.privateAccount, options);
+                if (options.oneofs)
+                    object.body = "privateAccount";
+            }
+            if (message.publicSpotKline != null && message.hasOwnProperty("publicSpotKline")) {
+                object.publicSpotKline = $root.mexc.PublicSpotKlineV3Api.toObject(message.publicSpotKline, options);
+                if (options.oneofs)
+                    object.body = "publicSpotKline";
+            }
+            if (message.publicMiniTicker != null && message.hasOwnProperty("publicMiniTicker")) {
+                object.publicMiniTicker = $root.mexc.PublicMiniTickerV3Api.toObject(message.publicMiniTicker, options);
+                if (options.oneofs)
+                    object.body = "publicMiniTicker";
+            }
+            if (message.publicMiniTickers != null && message.hasOwnProperty("publicMiniTickers")) {
+                object.publicMiniTickers = $root.mexc.PublicMiniTickersV3Api.toObject(message.publicMiniTickers, options);
+                if (options.oneofs)
+                    object.body = "publicMiniTickers";
+            }
+            if (message.publicBookTickerBatch != null && message.hasOwnProperty("publicBookTickerBatch")) {
+                object.publicBookTickerBatch = $root.mexc.PublicBookTickerBatchV3Api.toObject(message.publicBookTickerBatch, options);
+                if (options.oneofs)
+                    object.body = "publicBookTickerBatch";
+            }
+            if (message.publicIncreaseDepthsBatch != null && message.hasOwnProperty("publicIncreaseDepthsBatch")) {
+                object.publicIncreaseDepthsBatch = $root.mexc.PublicIncreaseDepthsBatchV3Api.toObject(message.publicIncreaseDepthsBatch, options);
+                if (options.oneofs)
+                    object.body = "publicIncreaseDepthsBatch";
+            }
+            if (message.publicAggreDepths != null && message.hasOwnProperty("publicAggreDepths")) {
+                object.publicAggreDepths = $root.mexc.PublicAggreDepthsV3Api.toObject(message.publicAggreDepths, options);
+                if (options.oneofs)
+                    object.body = "publicAggreDepths";
+            }
+            if (message.publicAggreDeals != null && message.hasOwnProperty("publicAggreDeals")) {
+                object.publicAggreDeals = $root.mexc.PublicAggreDealsV3Api.toObject(message.publicAggreDeals, options);
+                if (options.oneofs)
+                    object.body = "publicAggreDeals";
+            }
+            if (message.publicAggreBookTicker != null && message.hasOwnProperty("publicAggreBookTicker")) {
+                object.publicAggreBookTicker = $root.mexc.PublicAggreBookTickerV3Api.toObject(message.publicAggreBookTicker, options);
+                if (options.oneofs)
+                    object.body = "publicAggreBookTicker";
+            }
+            return object;
+        };
+
+        /**
+         * Converts this PushDataV3ApiWrapper to JSON.
+         * @function toJSON
+         * @memberof mexc.PushDataV3ApiWrapper
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        PushDataV3ApiWrapper.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         /**

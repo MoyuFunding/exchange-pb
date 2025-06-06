@@ -1,6 +1,6 @@
 {
   "name": "@frank1957/exchange-pb",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Protocol Buffer definitions for MEXC exchange data structures",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -11,7 +11,12 @@
     "copy-proto": "cp src/proto.js lib/ && cp src/proto.d.ts lib/",
     "clean": "rm -rf lib/ proto-gen/",
     "test": "jest",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "examples": "node examples/run_all.js",
+    "example:basic": "node examples/basic_serialization.js",
+    "example:complex": "node examples/complex_wrapper.js",
+    "example:websocket": "node examples/websocket_simulation.js",
+    "example:performance": "node examples/performance_test.js"
   },
   "keywords": [
     "protobuf",
