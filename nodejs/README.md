@@ -5,7 +5,7 @@ Node.js/TypeScript implementation of the MEXC exchange Protocol Buffer definitio
 ## Installation
 
 ```bash
-npm install @moyufunding/exchange-pb
+npm install @frank1957/exchange-pb
 ```
 
 ## Usage
@@ -13,7 +13,7 @@ npm install @moyufunding/exchange-pb
 ### TypeScript
 
 ```typescript
-import { mexc } from '@moyufunding/exchange-pb';
+import { mexc } from '@frank1957/exchange-pb';
 
 // Create a book ticker
 const bookTicker = new mexc.PublicBookTickerV3Api({
@@ -50,7 +50,7 @@ console.log('Plain object:', JSON.stringify(plainObject, null, 2));
 ### JavaScript
 
 ```javascript
-const { mexc } = require('@moyufunding/exchange-pb');
+const { mexc } = require('@frank1957/exchange-pb');
 
 // Create a book ticker
 const bookTicker = new mexc.PublicBookTickerV3Api({
