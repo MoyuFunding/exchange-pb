@@ -8,6 +8,21 @@ Go implementation of the MEXC exchange Protocol Buffer definitions.
 go get github.com/MoyuFunding/exchange-pb/go
 ```
 
+## Quick Start
+
+最简单的使用方式：
+
+```bash
+# 在你的Go项目中添加依赖
+go get github.com/MoyuFunding/exchange-pb/go
+```
+
+然后在代码中导入：
+
+```go
+import "github.com/MoyuFunding/exchange-pb/go/pkg/mexc"
+```
+
 ## Usage
 
 ```go
@@ -59,7 +74,7 @@ func main() {
 
 ### Prerequisites
 
-- Go 1.21+
+- Go 1.22+
 - Protocol Buffer compiler (`protoc`)
 
 ### Building

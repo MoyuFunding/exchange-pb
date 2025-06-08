@@ -9,9 +9,8 @@ generate: install-tools
 	@echo "Generating Go protobuf files..."
 	@mkdir -p pkg/mexc
 	protoc \
-		--go_out=./pkg \
+		--go_out=./pkg/mexc \
 		--go_opt=paths=source_relative \
-		--go_opt=Mmexc=github.com/MoyuFunding/exchange-pb/go/pkg/mexc \
 		--proto_path=../proto/mexc \
 		../proto/mexc/*.proto
 	@echo "Go protobuf generation complete!"
