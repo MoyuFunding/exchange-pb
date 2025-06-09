@@ -3,7 +3,7 @@ rust/target/
 rust/Cargo.lock
 
 # Go
-go/pkg/
+# go/pkg/
 go/*.sum
 
 # Node.js
