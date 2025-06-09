@@ -14,7 +14,7 @@ nodejs/*.log
 nodejs/package-lock.json
 
 # Generated protobuf files (keep source proto files)
-**/*.pb.go
+# **/*.pb.go
 **/*_pb.js
 **/*_pb.d.ts
 
